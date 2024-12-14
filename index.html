@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy birthday Shapla!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agu+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+      .canNone {
+        display: none;
+      }
+      .canvasBlock {
+        display: block;
+      }
+      .node {
+        display: none;
+      }
+      p {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 30px;
+        text-decoration: none;
+        color: rgb(214, 214, 64);
+        border: white solid 2px;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: transparent;
+      }
+      button:hover {
+        border: solid blue 5px;
+      }
+      .btn {
+        animation: scaling 2s infinite;
+      }
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* ভিডিও পুরো ব্যাকগ্রাউন্ড জুড়ে থাকবে */
+        z-index: -1; /* কনটেন্টের নিচে রাখতে */
+      }
+      .container-eg-btn-4 {
+        font-family: "Agu Display", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto 10px;
+        padding: 0.5em;
+        line-height: normal;
+      }
+      .container-eg-btn-4 .button {
+        background: #af40ff;
+        margin: 15px;
+        padding: 14px 18px;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        transition: 0.3s;
+        z-index: 1;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 12px;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-weight: 800;
+        font-size: large;
+      }
+      .container-eg-btn-4 .button-12:hover {
+        background-position: right center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .container-eg-btn-4 .button-12 {
+        background-image: linear-gradient(
+          to right,
+          #16bffd 0%,
+          #cb3066 51%,
+          #16bffd 100%
+        );
+        background-size: 200% auto;
+        box-shadow: 0px 6px 16px 0px #8d7bb187;
+      }
+      .container-eg-btn-4 .button-12:active {
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        -webkit-text-fill-color: unset;
+      }
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+      @keyframes scaling {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <canvas class="canNone can" id="c"></canvas>
+    <div
+      id="button"
+      style="position: absolute; bottom: 20px; left: 30%"
+      class="canNone btn"
+    >
+      <a href="./happy-birthday/index.html"> <button>Click & Next</button></a>
+    </div>
+    <div id="first-intro">
+      <video autoplay muted loop class="video-background">
+        <source src="./video.mp4" type="video/mp4" />
+        <!-- ব্রাউজার যদি ভিডিও সাপোর্ট না করে -->
+        Your browser does not support the video tag.
+      </video>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
+        <h2
+          style="
+            font-size: 1.8rem;
+            background-image: linear-gradient(
+              to right,
+              rgb(86, 192, 169),
+              red,
+              yellow
+            );
+            background-clip: text;
+            color: transparent;
+          "
+        >
+          , are you ready?
+        </h2>
+        <p
+          style="
+            background-image: conic-gradient(red, green, yellow);
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+          "
+        >
+          For another amazing day of your life. In just
+        </p>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.6rem;
+            background-image: linear-gradient(blue, hotpink, black);
+            background-clip: text;
+            color: transparent;
+          "
+        >
+          <p>
+            <span id="day">0</span> <br />
+            day
+          </p>
+          <p>
+            <span id="hours">0</span> <br />
+            hours
+          </p>
+          <p>
+            <span id="min">0</span> <br />
+            minutes
+          </p>
+          <p>
+            <span id="sec">0</span> <br />
+            secund
+          </p>
+        </div>
+        <p
+          style="
+            background-image: linear-gradient(
+              to right,
+              black,
+              red,
+              rgb(146, 24, 120)
+            );
+            background-clip: text;
+            color: transparent;
+          "
+        >
+          your birthday will arrive!
+        </p>
+      </div>
+      <!-- <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+        "
+        id="birthday-message"
+      >
+        <span
+          style="border-top: 5px dashed rgb(69, 95, 16)"
+         
+          >Celebrate Your Birthday</span
+        >
+      </div> -->
+      <div class="container-eg-btn-4 uf-border">
+        <a onclick="startAnimation()" class="button button-12"
+          >Celebrate Your Birthday</a
+        >
+      </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
+  </body>
+</html>
