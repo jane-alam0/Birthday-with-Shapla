@@ -1,8 +1,16 @@
 // নির্দিষ্ট জন্মদিনের তারিখ এবং সময় সেট করুন
-const targetDate = new Date("2024-12-12T13:20:00"); // YYYY-MM-DDTHH:MM:SS
+const targetDate = new Date("2025-03-03T24:00:00"); // YYYY-MM-DDTHH:MM:SS
 const audio = new Audio("./audio.mp3");
+const second = new Audio("./secound.mp3");
+second.loop = "true";
 
 let nowTime = 0;
+
+document.getElementById("mainBody").addEventListener("click", () => {
+  if (1000 < nowTime) {
+    second.play();
+  }
+});
 
 function updateCountdown() {
   const now = new Date(); // বর্তমান তারিখ এবং সময়
@@ -29,12 +37,15 @@ function updateCountdown() {
     document.getElementById("sec").innerText = seconds;
   }
   nowTime = timeLeft;
+  if (nowTime <= 1000) {
+    second.pause();
+  }
 }
 
 // অ্যানিমেশন শুরু করা
 audio.loop = "true";
 function startAnimation() {
-  if (nowTime <= 999) {
+  if (nowTime <= 1000) {
     audio.play();
     const canvs = document.getElementsByClassName("can");
     canvs[0].classList.remove("canNone");
