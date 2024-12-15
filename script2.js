@@ -1,5 +1,5 @@
 // নির্দিষ্ট জন্মদিনের তারিখ এবং সময় সেট করুন
-const targetDate = new Date("2025-03-03T24:00:00"); // YYYY-MM-DDTHH:MM:SS
+const targetDate = new Date("2025-03-02T24:00:00"); // YYYY-MM-DDTHH:MM:SS
 const audio = new Audio("./audio.mp3");
 const second = new Audio("./secound.mp3");
 second.loop = "true";
