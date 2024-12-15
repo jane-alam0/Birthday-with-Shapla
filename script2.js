@@ -31,6 +31,7 @@ function updateCountdown() {
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     // Countdown দেখানো (প্রতি সেকেন্ডে আপডেট হবে)
+    // Countdown দেখানো (প্রতি সেকেন্ডে আপডেট হবে)
     document.getElementById("day").innerText = days;
     document.getElementById("hours").innerText = hours;
     document.getElementById("min").innerText = minutes;
